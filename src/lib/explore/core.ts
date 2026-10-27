@@ -744,6 +744,14 @@ export const STAGE_TAG_CLASS: Record<string, string> = {
   unknown: "bg-slate-100 text-slate-500 dark:bg-slate-400/10 dark:text-slate-400",
 };
 
+/** 类别 tag 配色（需求/缺陷/任务/风险） */
+export const CATEGORY_TAG_CLASS: Record<string, string> = {
+  Req: "bg-blue-50 text-blue-600 dark:bg-blue-500/10 dark:text-blue-400",
+  Bug: "bg-red-50 text-red-600 dark:bg-red-500/10 dark:text-red-400",
+  Task: "bg-teal-50 text-teal-700 dark:bg-teal-500/10 dark:text-teal-400",
+  Risk: "bg-violet-50 text-violet-600 dark:bg-violet-500/10 dark:text-violet-400",
+};
+
 /** 优先级 tag 配色 */
 export const PRIORITY_TAG_CLASS: Record<string, string> = {
   high: "bg-red-50 text-red-700 dark:bg-red-500/10 dark:text-red-400",

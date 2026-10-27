@@ -13,6 +13,7 @@ import {
   fmtMonthDay,
   fmtRelative,
   initial,
+  CATEGORY_TAG_CLASS,
   PRIORITY_TAG_CLASS,
   STAGE_TAG_CLASS,
   TAG_CLASS,
@@ -36,6 +37,7 @@ interface Column {
 const COLUMNS: Column[] = [
   { key: "serial", label: "编号", width: 118, sortKey: "serial" },
   { key: "title", label: "标题", width: 0 },
+  { key: "category", label: "类别", width: 76 },
   { key: "stage", label: "阶段", width: 86, sortKey: "stage" },
   { key: "status", label: "状态", width: 92 },
   { key: "priority", label: "优先级", width: 72, sortKey: "priority" },
@@ -253,6 +255,14 @@ export function DataTable({ rows, now, selectedId, sort, dir, onSort, onSelect, 
                             {item.parentSerial && (
                               <span className="shrink-0 text-xs text-muted-foreground">↳ {item.parentSerial}</span>
                             )}
+                          </div>
+                        );
+                      case "category":
+                        return (
+                          <div key={column.key} className="min-w-0">
+                            <Tag className={CATEGORY_TAG_CLASS[item.category] ?? "bg-slate-100 text-slate-600 dark:bg-slate-400/10 dark:text-slate-400"}>
+                              {item.categoryLabel}
+                            </Tag>
                           </div>
                         );
                       case "stage":
